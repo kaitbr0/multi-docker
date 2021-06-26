@@ -14,4 +14,3 @@
 - ECS works with task definitions (instructions how to run a single container)
 - one must be essential
 - to connect, must add links to name (only has to be specified on one end)
-- did travis stop working?
