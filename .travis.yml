@@ -18,3 +18,15 @@ after_success:
   - docker push kaitbr0/multi-server
   - docker push kaitbr0/multi-nginx
   - docker push kaitbr0/multi-worker
+
+  deploy:
+    provider: elasticbeanstalk
+    region: 'us-east-2'
+    app: 'multi-docker'
+    env: 'MultiDocker-env'
+    bucket_name: 'elasticbeanstalk-us-east-2-030815009463'
+    bucket_path: 'docker-multi'
+    on:
+      branch: main
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
